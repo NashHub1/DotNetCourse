@@ -20,7 +20,7 @@ and secure against improper usage.
         static void Main(string[] args)
         {
             // Erstelle ein Car-Objekt
-            Car car = new Car(400);
+            Car car = new Car(500);
             car.Speed = 1000;
 
             // Ausgabe der Geschwindigkeit
