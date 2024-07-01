@@ -15,16 +15,32 @@ providing robustness against invalid values. Using 'this.speed = speed' directly
 potentially allowing invalid data to be assigned to 'speed'. This approach makes the code more maintainable
 and secure against improper usage.
 */
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
             // Erstelle ein Car-Objekt
             Car car = new Car(500);
             car.Speed = 1000;
-
             // Ausgabe der Geschwindigkeit
             Console.WriteLine("Car speed: " + car.Speed);
+
+
+            ////// Other Way 
+            Computer myComputer = new Computer()
+            {
+                Motherboard = "Z690",
+                HasWifi = true,
+                HasLTE = false,
+                ReleaseDate = DateTime.Now,
+                Price = 943.87m,
+                VideoCard = "RTX 2060"
+            };
+            myComputer.HasWifi = false;
+            Console.WriteLine(myComputer.HasWifi);
+            Console.WriteLine(myComputer.ReleaseDate);
+            Console.WriteLine(myComputer.VideoCard);
+
         }
     }
 
@@ -42,6 +58,33 @@ and secure against improper usage.
             get { return speed; }
             set { speed = value; }
         }
+    }
+
+    public class Computer
+    {
+        public string Motherboard { get; set; } = "";
+        public int CPUCores { get; set; }
+        public bool HasWifi { get; set; }
+        public bool HasLTE { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public decimal Price { get; set; }
+        public string VideoCard { get; set; } = "";
+
+        // // Die String Properties dürfen nicht NUll sein bei der erstellung, warum - Keine Ahung, alternativer
+        // // weg wäre das:
+        
+        // public Computer()
+        // {
+        //     if (VideoCard == null)
+        //     {
+        //         VideoCard = "";
+        //     }
+        //     if (Motherboard == null)
+        //     {
+        //         Motherboard = "";
+        //     }
+        // }
+
     }
 }
 
