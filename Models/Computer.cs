@@ -2,8 +2,10 @@ namespace HelloWorld.Models
 {
     public class Computer
     {
+        public int ComputerId { get; set; }
+
         public string Motherboard { get; set; } = "";
-        public int CPUCores { get; set; }
+        public int? CPUCores { get; set; }
         public bool HasWifi { get; set; }
         public bool HasLTE { get; set; }
         public DateTime ReleaseDate { get; set; }
@@ -12,7 +14,7 @@ namespace HelloWorld.Models
 
         // // Die String Properties dürfen nicht NUll sein bei der erstellung, warum - Keine Ahung, alternativer
         // // weg wäre das:
-        
+
         // public Computer()
         // {
         //     if (VideoCard == null)
