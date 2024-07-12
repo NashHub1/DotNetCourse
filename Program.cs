@@ -8,6 +8,7 @@ using HelloWorld;
 using HelloWorld.Data;
 using HelloWorld.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 
 namespace HelloWorld
@@ -17,8 +18,14 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-
-            DataContextDapper dapper = new DataContextDapper();          
+            /*Create an instance of the ConfigurationBuilder
+            AddJsonFile method specifies the configuration source (appsettings.json)
+            Build method compiles the configuration into an IConfiguration object*/
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
+            // Initialize a new instance of DataContextDapper using the configuration object
+            DataContextDapper dapper = new DataContextDapper(config);
 
             DateTime rightNow = dapper.LoadDataSingle<DateTime>("SELECT GETDATE()");
 

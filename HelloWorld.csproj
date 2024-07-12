@@ -12,6 +12,15 @@
     <PackageReference Include="microsoft.data.sqlclient" Version="5.2.1" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="8.0.6" />
     <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    
+    <!-- Specify that the appsettings.json file should be included in the build output -->
+    <!-- 'Update' attribute is used to modify properties of an existing item -->
+    <None Update="appsettings.json">
+      <!-- Ensure that appsettings.json is always copied to the output directory -->
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
