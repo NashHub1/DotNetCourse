@@ -1,0 +1,19 @@
+
+INSERT INTO TutorialAppSchema.Computer (
+                Motherboard,
+                HasWifi,
+                HasLTE,
+                ReleaseDate,
+                Price,
+                VideoCard
+            ) VALUES ('HPZBook','True','False','2024-07-12','1000.00','RTX 500')
+
+INSERT INTO TutorialAppSchema.Computer (
+                Motherboard,
+                HasWifi,
+                HasLTE,
+                ReleaseDate,
+                Price,
+                VideoCard
+            ) VALUES ('HPZBook','True','False','2024-07-12','1000.00','RTX 500')
+

@@ -21,6 +21,7 @@
       <!-- Ensure that appsettings.json is always copied to the output directory -->
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
