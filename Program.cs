@@ -76,6 +76,7 @@ namespace HelloWorld
 
         }
         // Method to escape single quotes in a string to prevent SQL injection
+        //Test
         static string EscapeSingleQuote(string input)
         {
             string output = input.Replace("'", "''");
